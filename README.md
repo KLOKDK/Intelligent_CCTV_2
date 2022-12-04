@@ -23,7 +23,7 @@ Main Camera는 Wide-View로 촬영하면서 감시 구역을 계속 촬영하고
 4. Wide-angle view는 객체+배경 영상으로 원본과 동일
 
 ### 구조
-<img src="demo/arch.jpg"></img>
+<img src="demo/arch.JPG"></img>
 
 
 ### Requirements
