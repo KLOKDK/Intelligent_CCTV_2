@@ -7,26 +7,23 @@ Main Camera는 Wide-View로 촬영하면서 감시 구역을 계속 촬영하고
 ### 처리 순서
 1. 원본 영상에서 마스크로 객체와 배경 분리
 
-<p align="center"><img src="demo/mask.png"></img></p>
+<img src="demo/mask.png"></img>
 
-examples
-
-<img src="demo/obejct_mask.gif"></img></p>
 
 2. 객체 영상에서 마스크 탐지 중 미착용 인원 발견 시 좌표 전달
 
-<p align="center"><img src="demo/ptz.png"></img></p>
+<img src="demo/ptz.png"></img>
 
 
 3. PTZ 카메라로 추적
 
-<p align="center"><img src="demo/tracking.png"></img></p>
+<img src="demo/tracking.png"></img>
 
 
 4. Wide-angle view는 객체+배경 영상으로 원본과 동일
 
-### 전체적인 구조
-<p align="center"><img src="demo/final_arch.png"></img></p>
+### 구조
+<img src="demo/arch.jpg"></img>
 
 
 ### Requirements
