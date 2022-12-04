@@ -28,12 +28,45 @@ Main Camera는 Wide-View로 촬영하면서 감시 구역을 계속 촬영하고
 
 ### Requirements
 * yolov3, yolov4
+* matplotlib
+* Pillow
+* numpy
+* OpenCV
 
 ## How to use
-### Load weights
+
+### 1. Mask Detection
+
+#### 1.1. Load weights
 * Use settings/training.ipynb
 ~~~
 !wget https://pjreddie.com/media/files/darknet53.conv.74
+~~~
+
+or Download [weights](https://drive.google.com/file/d/1_TOW4zOeoOkBm5hWePTDCmYxOKNxzgHu/view?usp=share_link)
+
+#### 1.2. Train
+~~~
+!./darknet detector train /content/Face_Mask_Detection_YOLO/Mask/object.data\
+                          /content/Face_Mask_Detection_YOLO/Mask/detect_mask.cfg\
+                          darknet53.conv.74\
+                          -dont_show -map 
+~~~
+
+#### 1.3. Detect Examples
+~~~
+!./darknet detector test /content/Face_Mask_Detection_YOLO/Mask/object.data\
+                         /content/Face_Mask_Detection_YOLO/Mask/detect_mask.cfg\
+                         /content/backup/detect_mask_last.weights\
+                         /content/Face_Mask_Detection_YOLO/demo/man_0_1.png
+~~~
+
+### 2. Person Detection
+Download Tiny YOLO cfg, weights at <https://pjreddie.com/darknet/yolo/>
+
+### 3. Install Heatmap settings
+~~~
+python heatmap/setup.py install
 ~~~
 
 ## About Models
