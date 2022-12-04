@@ -50,7 +50,7 @@ def on_mouse(event, x, y, flags, param):
             cv2.destroyAllWindows()
 
 
-video_path = 'ROI_test.mp4'
+video_path = 'test_Trim.mp4'
 output_path = './with_ROI_detection.mp4'
 
 video = cv2.VideoCapture(video_path)

@@ -10,7 +10,7 @@ def padding(img, width, height):
     result = cv2.copyMakeBorder(img,0,delta_h,0,delta_w,cv2.BORDER_CONSTANT)
     return result
 
-video_path = 'ROI_test.mp4'
+video_path = 'original.mp4'
 output_path = './background_subtraction_output.mp4'
 
 video = cv2.VideoCapture(video_path)
@@ -159,11 +159,14 @@ if video.isOpened():
         heatmap_result = cv2.cvtColor(numpy_heatmap_frame, cv2.COLOR_RGB2BGR) # PIL RGB to OpenCV BGR, OpenCV 형식으로 전환
 
         # For Report
-        #third_camera = frame[360:,:540]
+        third_camera = frame[360:,:540]
 
+        concat = cv2.hconcat([result,heatmap_result])
+        
         #cv2.imshow('mask', background_concat_image)       
         cv2.imshow('result',result)
-        #cv2.imshow('heatmap',heatmap_result)
+        #cv2.imshow('concat',concat)
+        cv2.imshow('heatmap',heatmap_result)
         #cv2.imshow('ptz',ptz)
         #cv2.imshow('3 camera', third_camera)
         output_video.write(result)
